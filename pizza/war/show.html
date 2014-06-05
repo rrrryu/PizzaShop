@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>注文一覧</title>
+    <script type="text/javascript" src="lib.js"></script>
+        <script type="text/javascript">
+        <!--
+        function callback(request){
+            var json = eval(request.responseText);
+            var res = '';
+            if (json.length == 1){
+                res += '<tr><td>' + json[0].id+'</td></tr>';
+                res += '<tr><td>' + json[0].name +'</td></tr>';
+                res += '<tr><td>' + json[0].address +'</td></tr>';
+                res += '<tr><td>' + json[0].tell +'</td></tr>';
+                res += '<tr><td>' + json[0].pizza +'</td></tr>';
+            } else {
+                for (var i = 0;i < json.length;i++){
+                    res += '<tr><td><a href="javascript:return false;" onclick="getData(' + json[i].id +');">' + json[i].name+ '</a></td>';
+                    res += '<td><a href="' + json[i].name + '">' + json[i].pizza + '</a></td>' ;
+                    res += '<td><a href="' + json[i].name + '">' + json[i].address + '</a></td>' ;
+                    res += '<td><a href="' + json[i].name + '">' + json[i].tell + '</a></td>' ;
+                    res += '<td><a href="edit.html?id=' + json[i].id + '">更新</td>';
+                    res += '<td><a href="del.html?id=' + json[i].id + '">削除</td></tr>';
+                }
+            }
+            var obj = document.getElementById("datatable");
+            obj.innerHTML = res;
+        }
+        //-->
+        </script>
+</head>
+<body>
+<body onload="getData(null);">
+    <h1>注文一覧</h1>
+     
+    <table id="datatable" border="1">
+      <tr>
+        <td>wait...</td>
+      </tr>
+    </table>
+    <br>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>PizzaDataの追加</title>
+    </head>
+    
+    <body>
+        <h1>注文データの追加</h1>
+        <h4>お届け先の宛名、住所、電話番号、ピザの枚数を明記して下さい。</h4>
+        <table>
+        <form method="post" action="/add">
+            <tr><th>NAME:</th><td><input type="text" name="name"></td></tr>
+            <tr><th>ADDRESS:</th><td><input type="text" name="address"></td></tr>
+            <tr><th>TEL:</th><td><input type="text" name="tell"></textarea></td></tr>
+            <tr><th>PIZZA:</th><td><input type="text" name="pizza"></textarea></td></tr>
+            <tr><th></th><td><a href="complete.html">追加</a></td></tr>
+        </form>
+        </table>
+    </body>
+</html>
